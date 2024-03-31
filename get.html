@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hotel business</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body style="background-color: #f1ede9;">
+
+  <!-- Шапка сайта -->
+  <header style="background-image: url('img/host.png'); background-size: cover; padding: 20px;">
+    <div class="container">
+      <div class="row justify-content-end align-items-center">
+        <div class="col-auto">
+          <h1 style="color: rgb(129, 73, 0); cursor: pointer;" onclick="redirectToIndex()">hotel business</h1>
+          <p style="color: rgb(148, 96, 0); font-size: 14px;">Програмное обеспечение для вашего бизнеса</p>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-light" onclick="redirectToError()">Премиум услуги</button>
+          <button class="btn btn-light" onclick="redirectToHotel()">Наш продукт</button>
+          <button class="btn btn-light" onclick="redirectToReg()">Зарегистрироваться</button>
+          <button class="btn btn-light" onclick="redirectToVhod()">Войти</button>
+          <button class="btn btn-light" onclick="redirectToSearch()">Поиск</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<!-- НАЧАЛО -->
+<div class="container mt-5">
+    <h2 class="mt-4 mb-4">Регистрация</h2>
+    <form action="http://127.0.0.1:5500" method="GET"> <!-- МЕТОД -->
+        <div class="form-group">
+            <label for="surname">Фамилия:</label>
+            <input type="text" class="form-control" id="surname" name="surname" value="Валиуллин" pattern="[а-яА-ЯёЁ]+" title="Введите только буквы русского алфавита">
+        </div>
+        <div class="form-group">
+            <label for="name">Имя:</label>
+            <input type="text" class="form-control" id="name" name="name" value="Камиль" pattern="[а-яА-ЯёЁ]+" title="Введите только буквы русского алфавита">
+        </div>
+        <div class="form-group">
+            <label for="patronymic">Отчество:</label>
+            <input type="text" class="form-control" id="patronymic" name="patronymic" value="Наилевич" pattern="[а-яА-ЯёЁ]+" title="Введите только буквы русского алфавита">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email" value="kamin@yandex.ru">
+        </div>
+        
+        <div class="form-group">
+            <label for="country">Выбор страны:</label>
+            <select class="form-control" id="country" name="country" value="Россия">
+                <option value="Russia" selected>Россия</option>
+                <option value="MO" >Монако</option>
+                <option value="KAT" >Катар</option>
+                <option value="PYER" >Пуэрто-Рико</option>
+                <option value="KOR" >Корея</option>
+                <option value="KIT" >Китай</option>
+                <option value="KAT" >Канада</option>
+                <option value="GER" >Германия</option>
+                <option value="GR" >Грузия</option>
+                <option value="AZ" >Азербайджан</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Выбор города:</label><br>
+            <input type="radio" id="kazan" name="city" value="Казань" checked>
+            <label for="kazan">Казань</label><br>
+            <input type="radio" id="turk" name="city" value="Турция">
+            <label for="turk">Турция</label><br>
+            <input type="radio" id="egipt" name="city" value="Египет">
+            <label for="egipt">Египет</label><br>
+            <input type="radio" id="kipr" name="city" value="Кипр">
+            <label for="kipr">Кипр</label><br>
+            <input type="radio" id="germ" name="city" value="Германия">
+            <label for="germ">Германия</label><br>
+        </div>
+        <div class="form-group">
+            <label>Выбор языка:</label><br>
+            <input type="checkbox" id="russian" name="language" value="русский" checked>
+            <label for="russian">Русский</label><br>
+            <input type="checkbox" id="tat" name="language" value="татарский" checked>
+            <label for="tat">татарский</label><br>
+            <input type="checkbox" id="spanish" name="language" value="испанский" >
+            <label for="spanish">испанский</label><br>
+            <input type="checkbox" id="turesk" name="language" value="турецкий" >
+            <label for="turesk">турецкий</label><br>
+            <input type="checkbox" id="arabsk" name="language" value="арабский">
+            <label for="arabsk">арабский</label><br>                
+        </div>
+        <div class="form-group">
+            <label for="profession">Выбор профессий:</label>
+            <select class="form-control" id="profession" name="profession" multiple>
+                <option value="IT-специалист" selected>IT-специалист</option>
+                <option value="Биотехнолог" >Биотехнолог</option>
+                <option value="Инженер-строитель" >Инженер-строитель</option>
+                <option value="Маркетолог" >Маркетолог</option>
+                <option value="Гадалка">Гадалка</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" class="form-control" id="password" name="password" value="Сидят8двамужика1в4бассейне">
+        </div>
+        <div class="form-group">
+            <label for="additional-info">Дополнительная информация:</label>
+            <textarea class="form-control" id="additional-info" name="additional-info" rows="4" cols="50">Идет компания по лесу. Один спрашивает :
+"Долго что-то мы идем, мы заблудились?"
+Другой ему отвечает :
+"Мы не могли заблудится, мы и так идем наугад"
+</textarea>
+        </div>
+        <input type="hidden" name="student" value="Арина">
+        <button type="submit" class="btn btn-secondary">Загрузить информацию на сервер</button>
+        <button type="reset" class="btn btn-danger">Очистить форму</button>
+    </form>
+</div>
+
+<div class="container mt-4">
+    <a href="reg.html" class="btn btn-secondary">Сменить метод на: POST</a>
+</div>
+
+<div class="container mt-4">
+    <button class="btn btn-danger" onclick="openRegistrationForm()" >Открыть в отдельном окне</button>
+</div>
+
+<script>
+    function openRegistrationForm() {
+        // Определяем параметры окна
+        var options = 'left=100,top=100,width=500,height=600,toolbar=no,menubar=no,status=yes,location=no,resizable=yes,scrollbars=yes';
+        // Открываем форму в новом окне
+        var registrationFormWindow = window.open('get.html', '_blank', options);
+
+        registrationFormWindow.onload = function() {
+            registrationFormWindow.document.querySelector('header').style.display = 'none';
+            registrationFormWindow.document.querySelector('footer').style.display = 'none';
+            registrationFormWindow.document.querySelector('.open-registration-form').style.display = 'none';
+            registrationFormWindow.document.querySelector('.go-to-get-page').style.display = 'none';
+        };
+    }
+</script>
+
+ <!-- Подвал страницы -->
+ <footer class="bg-light py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>О нас</h5>
+        <ul class="list-unstyled">
+          <li>Партнёрская программа</li>
+          <li>Реклама</li>
+          <li>Пресс-центр</li>
+          <li>Вакансии</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Поддержка</h5>
+        <ul class="list-unstyled">
+          <li>Правила</li>
+          <li>Политика конфиденциальности</li>
+          <li>Оферта</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <p>© 2007-2024, hotel business — надежно и удобно</p>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  
+  </body>
+  </html>
+  

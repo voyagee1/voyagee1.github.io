@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hotel business</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body style="background-color: #f1ede9;">
+
+  <!-- Шапка сайта -->
+  <header style="background-image: url('img/host.png'); background-size: cover; padding: 20px;">
+    <div class="container">
+      <div class="row justify-content-end align-items-center">
+        <div class="col-auto">
+          <h1 style="color: rgb(129, 73, 0); cursor: pointer;" onclick="redirectToIndex()">hotel business</h1>
+          <p style="color: rgb(148, 96, 0); font-size: 14px;">Програмное обеспечение для вашего бизнеса</p>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-light" onclick="redirectToError()">Премиум услуги</button>
+          <button class="btn btn-light" onclick="redirectToHotel()">Наш продукт</button>
+          <button class="btn btn-light" onclick="redirectToReg()">Зарегистрироваться</button>
+          <button class="btn btn-light" onclick="redirectToVhod()">Войти</button>
+          <button class="btn btn-light" onclick="redirectToSearch()">Поиск</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<!-- НАЧАЛО -->
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <!-- Форма для поиска в различных поисковых системах -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Поиск в различных поисковых системах</h5>
+                    <form action="https://www.yandex.ru/search/" method="GET" target="_blank" class="mb-3">
+                        <div class="form-group">
+                            <label for="yandex_query">Yandex:</label>
+                            <input type="text" id="yandex_query" name="text" placeholder="Поиск в Yandex" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Искать</button>
+                    </form>
+                    <form action="http://rambler.ru/cgi-bin/search" method="GET" target="_blank" class="mb-3">
+                        <div class="form-group">
+                            <label for="rambler_query">Rambler:</label>
+                            <input type="text" id="rambler_query" name="text" placeholder="Поиск в Rambler" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Искать</button>
+                    </form>
+                    <form action="https://www.google.com/search" method="GET" target="_blank" class="mb-3">
+                        <div class="form-group">
+                            <label for="google_query">Google:</label>
+                            <input type="text" id="google_query" name="text" placeholder="Поиск в Google" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Искать</button>
+                    </form>
+                    <form action="http://www.filesearch.ru/search.cgi" method="GET" target="_blank" class="mb-3">
+                        <div class="form-group">
+                            <label for="filesearch_query">Filesearch:</label>
+                            <input type="text" id="filesearch_query" name="text" placeholder="Поиск в Filesearch" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Искать</button>
+                    </form>
+                
+            </div>
+            <!-- Форма для фильтрации -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Фильтрация результатов</h5>
+                    <form class="mb-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Введите запрос">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option selected disabled>Выберите категорию</option>
+                                <option>Программное обеспечение</option>
+                                <option>Услуги</option>
+                                <option>Отзывы</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="priceRange">Фильтр по цене:</label>
+                            <input type="range" class="form-control-range" id="priceRange" min="0" max="1000" step="10">
+                        </div>
+                        <button type="button" class="btn btn-lg btn-block btn-secondary">Поиск</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- КОНЕЦ -->
+</body>
+
+<footer class="bg-light py-4 sticky-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>О нас</h5>
+          <ul class="list-unstyled">
+            <li>Партнёрская программа</li>
+            <li>Реклама</li>
+            <li>Пресс-центр</li>
+            <li>Вакансии</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Поддержка</h5>
+          <ul class="list-unstyled">
+            <li>Правила</li>
+            <li>Политика конфиденциальности</li>
+            <li>Оферта</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <p>© 2007-2024, hotel business — надежно и удобно</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+  
+  </html>
+  
